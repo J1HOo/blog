@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Card } from "../components/Card";
 import { Article } from "../dummy";
@@ -12,6 +12,7 @@ export const HomePage = () => {
       .get("http://localhost:8000/articles")
       .then(({ data }) => setArticles(data));
   }, []);
+
   return (
     <>
       {/* Header */}
@@ -21,7 +22,6 @@ export const HomePage = () => {
           <p className="ml-4 text-xl text-gray-500">제 블로그입니다.</p>
         </div>
       </div>
-
       {/* Body */}
       <div className="max-w-screen-lg mx-auto">
         <div className="p-4">
